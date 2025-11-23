@@ -2,16 +2,16 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: '.'
+    root: process.cwd()
   },
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'localhost',
+      },
+    ],
   },
-  experimental: {
-    turbo: {
-      root: '.'
-    }
-  }
 };
 
 export default nextConfig;

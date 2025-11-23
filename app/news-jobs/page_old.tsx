@@ -142,7 +142,7 @@ const featuredJobs = [
 ];
 
 export default function NewsJobs() {
-  const [activeTab, setActiveTab] = React.useState('news');
+  const [activeTab, setActiveTab] = useState('news');
 
   return (
     <div className="min-h-screen py-16">
