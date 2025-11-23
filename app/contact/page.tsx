@@ -44,29 +44,29 @@ export default function Contact() {
     <Layout>
       <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-green-50">
         {/* Main Contact Form Container - Light theme matching homepage */}
-        <div className="mx-auto max-w-2xl px-6 py-16">
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-slate-900 font-poppins mb-2">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-12 sm:py-16">
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 sm:p-6 lg:p-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 font-poppins mb-2">
                 Contact Us
               </h1>
-              <p className="text-slate-600">
+              <p className="text-sm sm:text-base text-slate-600">
                 Get in touch with us for expert Ayurveda solutions
               </p>
             </div>
-            <form onSubmit={handleSubmit} className="wpforms-validate wpforms-form space-y-6">
+            <form onSubmit={handleSubmit} className="wpforms-validate wpforms-form space-y-4 sm:space-y-6">
               <noscript className="wpforms-error-noscript">
                 Please enable JavaScript in your browser to complete this form.
               </noscript>
               
-              <div className="wpforms-field-container space-y-6">
+              <div className="wpforms-field-container space-y-4 sm:space-y-6">
                 {/* Name Field - Matching original fieldset structure */}
                 <div className="wpforms-field wpforms-field-name">
                   <fieldset>
-                    <legend className="wpforms-field-label text-base font-medium text-slate-900 mb-3">
+                    <legend className="wpforms-field-label text-sm sm:text-base font-medium text-slate-900 mb-2 sm:mb-3">
                       Name <span className="wpforms-required-label text-red-600" aria-hidden="true">*</span>
                     </legend>
-                    <div className="wpforms-field-row wpforms-field-medium grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="wpforms-field-row wpforms-field-medium grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       <div className="wpforms-field-row-block wpforms-first wpforms-one-half">
                         <input
                           type="text"
@@ -75,9 +75,9 @@ export default function Contact() {
                           required
                           value={formData.firstName}
                           onChange={handleInputChange}
-                          className="wpforms-field-name-first wpforms-field-required w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
+                          className="wpforms-field-name-first wpforms-field-required w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
                         />
-                        <label htmlFor="wpforms-114-field_0" className="wpforms-field-sublabel after text-sm text-slate-600 mt-1 block">
+                        <label htmlFor="wpforms-114-field_0" className="wpforms-field-sublabel after text-xs sm:text-sm text-slate-600 mt-1 block">
                           First
                         </label>
                       </div>
@@ -89,9 +89,9 @@ export default function Contact() {
                           required
                           value={formData.lastName}
                           onChange={handleInputChange}
-                          className="wpforms-field-name-last wpforms-field-required w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
+                          className="wpforms-field-name-last wpforms-field-required w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
                         />
-                        <label htmlFor="wpforms-114-field_0-last" className="wpforms-field-sublabel after text-sm text-slate-600 mt-1 block">
+                        <label htmlFor="wpforms-114-field_0-last" className="wpforms-field-sublabel after text-xs sm:text-sm text-slate-600 mt-1 block">
                           Last
                         </label>
                       </div>
@@ -101,7 +101,7 @@ export default function Contact() {
 
                 {/* Mobile Number Field */}
                 <div className="wpforms-field wpforms-field-text">
-                  <label className="wpforms-field-label text-base font-medium text-slate-900 block mb-2" htmlFor="wpforms-114-field_12">
+                  <label className="wpforms-field-label text-sm sm:text-base font-medium text-slate-900 block mb-2" htmlFor="wpforms-114-field_12">
                     Mobile Number <span className="wpforms-required-label text-red-600" aria-hidden="true">*</span>
                   </label>
                   <input
@@ -111,13 +111,13 @@ export default function Contact() {
                     required
                     value={formData.mobile}
                     onChange={handleInputChange}
-                    className="wpforms-field-medium wpforms-field-required w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
+                    className="wpforms-field-medium wpforms-field-required w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
                   />
                 </div>
 
                 {/* Email Field */}
                 <div className="wpforms-field wpforms-field-email">
-                  <label className="wpforms-field-label text-base font-medium text-slate-900 block mb-2" htmlFor="wpforms-114-field_1">
+                  <label className="wpforms-field-label text-sm sm:text-base font-medium text-slate-900 block mb-2" htmlFor="wpforms-114-field_1">
                     Email <span className="wpforms-required-label text-red-600" aria-hidden="true">*</span>
                   </label>
                   <input
@@ -128,7 +128,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="wpforms-field-medium wpforms-field-required w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
+                    className="wpforms-field-medium wpforms-field-required w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
                   />
                 </div>
 
@@ -161,7 +161,7 @@ export default function Contact() {
 
                 {/* Services Dropdown */}
                 <div className="wpforms-field wpforms-field-select wpforms-field-select-style-classic">
-                  <label className="wpforms-field-label text-base font-medium text-slate-900 block mb-2" htmlFor="wpforms-114-field_10">
+                  <label className="wpforms-field-label text-sm sm:text-base font-medium text-slate-900 block mb-2" htmlFor="wpforms-114-field_10">
                     Which Services You Interested?
                   </label>
                   <select
@@ -169,7 +169,7 @@ export default function Contact() {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="wpforms-field-medium w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
+                    className="wpforms-field-medium w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-700 bg-white"
                   >
                     {services.map((service) => (
                       <option key={service} value={service} className="choice-depth-1">
@@ -194,9 +194,9 @@ export default function Contact() {
                           required
                           checked={formData.emailConsent}
                           onChange={handleInputChange}
-                          className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                          className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded shrink-0 mt-0.5"
                         />
-                        <label className="wpforms-field-label-inline text-sm text-slate-700" htmlFor="wpforms-114-field_5_1">
+                        <label className="wpforms-field-label-inline text-xs sm:text-sm text-slate-700 leading-5" htmlFor="wpforms-114-field_5_1">
                           Please check here to join our email list.
                         </label>
                       </li>
@@ -217,7 +217,7 @@ export default function Contact() {
                   type="submit"
                   name="wpforms[submit]"
                   id="wpforms-submit-114"
-                  className="wpforms-submit w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
+                  className="wpforms-submit w-full bg-blue-600 text-white py-3 sm:py-4 px-6 text-sm sm:text-base rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 font-medium"
                   data-alt-text="Sending..."
                   data-submit-text="Submit"
                   aria-live="assertive"

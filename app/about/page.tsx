@@ -7,13 +7,13 @@ export default function AboutUs() {
     <Layout>
       <div>
         {/* Hero Section */}
-        <section className="relative bg-linear-to-br from-blue-50 to-green-50 py-16 sm:py-24 lg:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="relative bg-linear-to-br from-blue-50 to-green-50 py-12 sm:py-16 md:py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl font-poppins">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-poppins leading-tight">
                 About Us – AyurWings
               </h1>
-              <p className="mt-6 text-lg leading-8 text-slate-600 max-w-3xl">
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 max-w-3xl">
                 AyurWings is a pioneering platform dedicated to advancing the rich tradition of Ayurveda through modern education, online lectures, and comprehensive marketing & branding services.
               </p>
             </div>
@@ -21,11 +21,11 @@ export default function AboutUs() {
         </section>
 
         {/* Main Content Section */}
-        <section className="py-16 sm:py-24 bg-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="py-12 sm:py-16 md:py-24 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* About Description */}
-            <div className="max-w-4xl mb-16">
-              <div className="prose prose-lg text-slate-600">
+            <div className="max-w-4xl mb-12 sm:mb-16">
+              <div className="prose prose-sm sm:prose-base lg:prose-lg text-slate-600">
                 <p>
                   AyurWings is a pioneering platform dedicated to advancing the rich tradition of Ayurveda through modern education, online lectures, and comprehensive marketing & branding services. Committed to making Ayurveda accessible to a global audience, Ayurwings offers a range of online educational resources, including courses, webinars, and workshops designed to deepen the understanding of this ancient healing science.
                 </p>
@@ -39,62 +39,59 @@ export default function AboutUs() {
             </div>
             
             {/* Mission Section */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-slate-900 font-poppins mb-4">Our Mission</h3>
-              <p className="text-lg text-slate-600 max-w-4xl">
+            <div className="mb-8 sm:mb-12">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-poppins mb-3 sm:mb-4">Our Mission</h3>
+              <p className="text-base sm:text-lg text-slate-600 max-w-4xl leading-7 sm:leading-8">
                 To bridge the ancient wisdom of Ayurveda with cutting-edge digital marketing solutions, enabling doctors to grow their practices, connect authentically with patients, and make a meaningful impact on their lives.
               </p>
             </div>
             
             {/* Why Choose AyurWings Section */}
-            <div className="mb-12">
-
-              <h3 className="text-2xl font-bold text-slate-900 font-poppins mb-4">Why Choose AyurWings?</h3>
-              <ul className="space-y-3 text-lg text-slate-600 max-w-4xl">
+            <div className="mb-8 sm:mb-12">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-poppins mb-3 sm:mb-4">Why Choose AyurWings?</h3>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base lg:text-lg text-slate-600 max-w-4xl">
                 <li className="flex items-start">
-                  <span className="font-semibold text-blue-600 mr-2">•</span>
+                  <span className="font-semibold text-blue-600 mr-2 mt-1 shrink-0">•</span>
                   <span><strong>Exclusive Focus on Ayurveda:</strong> We understand the unique needs and challenges of Ayurveda doctors and tailor our strategies to reflect your practice's authenticity.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-semibold text-blue-600 mr-2">•</span>
+                  <span className="font-semibold text-blue-600 mr-2 mt-1 shrink-0">•</span>
                   <span><strong>Proven Expertise:</strong> With years of experience in healthcare marketing, we have helped numerous Ayurveda professionals boost their visibility, attract patients, and grow sustainably.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-semibold text-blue-600 mr-2">•</span>
+                  <span className="font-semibold text-blue-600 mr-2 mt-1 shrink-0">•</span>
                   <span><strong>Data-Driven Solutions:</strong> From increasing organic website traffic to running performance-driven ad campaigns, every step we take is backed by data and geared towards measurable results.</span>
                 </li>
               </ul>
             </div>
             
             {/* What We Offer Section */}
-            <div className="mb-12">
-
-              <h2 className="text-2xl font-bold text-slate-900 font-poppins mb-4">What We Offer</h2>
-              <ul className="space-y-3 text-lg text-slate-600 max-w-4xl">
+            <div className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 font-poppins mb-3 sm:mb-4">What We Offer</h2>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base lg:text-lg text-slate-600 max-w-4xl">
                 <li className="flex items-start">
-                  <span className="font-semibold text-green-600 mr-2">•</span>
+                  <span className="font-semibold text-green-600 mr-2 mt-1 shrink-0">•</span>
                   <span><strong>Enhanced Online Visibility:</strong> Ensure your practice stands out on search engines and social media platforms.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-semibold text-green-600 mr-2">•</span>
+                  <span className="font-semibold text-green-600 mr-2 mt-1 shrink-0">•</span>
                   <span><strong>Patient-Centric Campaigns:</strong> Connect with people who value holistic and natural healthcare solutions.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-semibold text-green-600 mr-2">•</span>
+                  <span className="font-semibold text-green-600 mr-2 mt-1 shrink-0">•</span>
                   <span><strong>Brand Building:</strong> Establish trust and credibility by showcasing your expertise and unique approach.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-semibold text-green-600 mr-2">•</span>
+                  <span className="font-semibold text-green-600 mr-2 mt-1 shrink-0">•</span>
                   <span><strong>Lead Generation & Growth:</strong> Turn digital engagements into real-world appointments and long-term patient relationships.</span>
                 </li>
               </ul>
             </div>
             
             {/* Vision Section */}
-            <div className="mb-12">
-
-              <h2 className="text-2xl font-bold text-slate-900 font-poppins mb-4">Our Vision</h2>
-              <div className="text-lg text-slate-600 space-y-4 max-w-4xl">
+            <div className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 font-poppins mb-3 sm:mb-4">Our Vision</h2>
+              <div className="text-sm sm:text-base lg:text-lg text-slate-600 space-y-3 sm:space-y-4 max-w-4xl leading-7 sm:leading-8">
                 <p>
                   To be the go-to digital marketing partner for Ayurveda doctors, helping them thrive in an increasingly online world while preserving the integrity and authenticity of their practice.
                 </p>

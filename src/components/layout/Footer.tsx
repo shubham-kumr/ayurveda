@@ -75,32 +75,32 @@ export default function Footer() {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 pt-12 sm:pt-16 lg:pt-24 xl:pt-32">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3 xl:gap-8">
+          <div className="space-y-6 sm:space-y-8">
             <div>
-              <h3 className="text-lg font-semibold text-blue-600 font-poppins">
+              <h3 className="text-base sm:text-lg font-semibold text-blue-600 font-poppins">
                 AyurWings
               </h3>
-              <p className="text-sm text-slate-600 mt-2 max-w-sm">
+              <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-sm">
                 India's First EdTech Platform Dedicated to Ayurveda. Empowering ancient wisdom through modern education.
               </p>
             </div>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPinIcon className="h-5 w-5 text-blue-600" />
-                <span className="text-sm text-slate-600">India</span>
+            <div className="space-y-3 sm:space-y-4">
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <MapPinIcon className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 shrink-0" />
+                <span className="text-xs sm:text-sm text-slate-600">India</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <PhoneIcon className="h-5 w-5 text-blue-600" />
-                <span className="text-sm text-slate-600">+91 XXX XXX XXXX</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 shrink-0" />
+                <span className="text-xs sm:text-sm text-slate-600">+91 XXX XXX XXXX</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <EnvelopeIcon className="h-5 w-5 text-blue-600" />
-                <span className="text-sm text-slate-600">info@ayurwings.com</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <EnvelopeIcon className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 shrink-0" />
+                <span className="text-xs sm:text-sm text-slate-600">info@ayurwings.com</span>
               </div>
             </div>
-            <div className="flex space-x-6">
+            <div className="flex space-x-4 sm:space-x-6">
               {footerNavigation.social.map((item) => (
                 <a
                   key={item.name}
@@ -110,21 +110,21 @@ export default function Footer() {
                   className="text-slate-400 hover:text-blue-600 transition-colors duration-200"
                 >
                   <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                  <item.icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
                 </a>
               ))}
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+          <div className="mt-12 sm:mt-16 lg:mt-0 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 xl:col-span-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-slate-900">Services</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-xs sm:text-sm font-semibold leading-5 sm:leading-6 text-slate-900">Services</h3>
+                <ul role="list" className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                   {footerNavigation.services.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                        className="text-xs sm:text-sm leading-5 sm:leading-6 text-slate-600 hover:text-blue-600 transition-colors duration-200"
                       >
                         {item.name}
                       </Link>
@@ -132,14 +132,14 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-slate-900">Videos</h3>
-                <ul role="list" className="mt-6 space-y-4">
+              <div className="mt-6 sm:mt-10 md:mt-0">
+                <h3 className="text-xs sm:text-sm font-semibold leading-5 sm:leading-6 text-slate-900">Videos</h3>
+                <ul role="list" className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                   {footerNavigation.videos.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                        className="text-xs sm:text-sm leading-5 sm:leading-6 text-slate-600 hover:text-blue-600 transition-colors duration-200"
                       >
                         {item.name}
                       </Link>
@@ -148,15 +148,15 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+            <div className="mt-6 sm:mt-0">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-slate-900">Company</h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <h3 className="text-xs sm:text-sm font-semibold leading-5 sm:leading-6 text-slate-900">Company</h3>
+                <ul role="list" className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                   {footerNavigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                        className="text-xs sm:text-sm leading-5 sm:leading-6 text-slate-600 hover:text-blue-600 transition-colors duration-200"
                       >
                         {item.name}
                       </Link>
@@ -167,8 +167,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-200 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-slate-500 text-center">
+        <div className="mt-12 sm:mt-16 lg:mt-20 xl:mt-24 border-t border-gray-200 pt-6 sm:pt-8">
+          <p className="text-xs leading-4 sm:leading-5 text-slate-500 text-center px-4">
             &copy; {new Date().getFullYear()} AyurWings. All rights reserved. Empowering Ayurveda through digital innovation.
           </p>
         </div>

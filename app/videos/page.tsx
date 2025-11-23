@@ -108,61 +108,61 @@ const featuredSeries = [
 
 export default function Videos() {
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen py-12 sm:py-16">
       {/* Hero Section */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-poppins">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 font-poppins leading-tight">
             Ayurwings Ayurvedic Lecture Videos
           </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-slate-600">
             Access Ayurwings' recorded Ayurvedic lectures. Learn Ayurveda anytime, anywhere 
             with expert guidance and comprehensive content from renowned practitioners.
           </p>
         </div>
 
         {/* Stats Section */}
-        <div className="mx-auto mt-16 max-w-4xl">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-4 text-center">
-            <div className="bg-blue-50 rounded-lg p-6">
-              <div className="text-3xl font-bold text-blue-600 font-poppins">100+</div>
-              <div className="text-slate-600 mt-2">Video Lectures</div>
+        <div className="mx-auto mt-12 sm:mt-16 max-w-4xl">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 md:grid-cols-4 text-center">
+            <div className="bg-blue-50 rounded-lg p-4 sm:p-6">
+              <div className="text-2xl sm:text-3xl font-bold text-blue-600 font-poppins">100+</div>
+              <div className="text-slate-600 mt-1 sm:mt-2 text-xs sm:text-sm">Video Lectures</div>
             </div>
-            <div className="bg-green-50 rounded-lg p-6">
-              <div className="text-3xl font-bold text-green-600 font-poppins">60+</div>
-              <div className="text-slate-600 mt-2">Hours of Content</div>
+            <div className="bg-green-50 rounded-lg p-4 sm:p-6">
+              <div className="text-2xl sm:text-3xl font-bold text-green-600 font-poppins">60+</div>
+              <div className="text-slate-600 mt-1 sm:mt-2 text-xs sm:text-sm">Hours of Content</div>
             </div>
-            <div className="bg-purple-50 rounded-lg p-6">
-              <div className="text-3xl font-bold text-purple-600 font-poppins">9</div>
-              <div className="text-slate-600 mt-2">Specialization Areas</div>
+            <div className="bg-purple-50 rounded-lg p-4 sm:p-6">
+              <div className="text-2xl sm:text-3xl font-bold text-purple-600 font-poppins">9</div>
+              <div className="text-slate-600 mt-1 sm:mt-2 text-xs sm:text-sm">Specialization Areas</div>
             </div>
-            <div className="bg-orange-50 rounded-lg p-6">
-              <div className="text-3xl font-bold text-orange-600 font-poppins">24/7</div>
-              <div className="text-slate-600 mt-2">Access Available</div>
+            <div className="bg-orange-50 rounded-lg p-4 sm:p-6">
+              <div className="text-2xl sm:text-3xl font-bold text-orange-600 font-poppins">24/7</div>
+              <div className="text-slate-600 mt-1 sm:mt-2 text-xs sm:text-sm">Access Available</div>
             </div>
           </div>
         </div>
 
         {/* Featured Series */}
-        <div className="mx-auto mt-20 max-w-7xl">
-          <h2 className="text-3xl font-bold text-center text-slate-900 font-poppins mb-16">
+        <div className="mx-auto mt-16 sm:mt-20 max-w-7xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 font-poppins mb-12 sm:mb-16">
             Featured Video Series
           </h2>
           
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredSeries.map((series, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-6 border border-blue-200">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">▶</span>
+              <div key={index} className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-4 sm:p-6 border border-blue-200">
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center shrink-0">
+                    <span className="text-white font-bold text-sm sm:text-base">▶</span>
                   </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-bold text-slate-900 font-poppins">{series.title}</h3>
-                    <p className="text-blue-600 font-medium">{series.episodes} Episodes • {series.totalDuration}</p>
+                  <div className="ml-3 sm:ml-4 min-w-0">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-poppins leading-tight">{series.title}</h3>
+                    <p className="text-blue-600 font-medium text-xs sm:text-sm">{series.episodes} Episodes • {series.totalDuration}</p>
                   </div>
                 </div>
-                <p className="text-slate-600 mb-4">{series.description}</p>
-                <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                <p className="text-slate-600 mb-3 sm:mb-4 text-sm sm:text-base">{series.description}</p>
+                <button className="w-full bg-blue-600 text-white py-2.5 sm:py-3 px-4 text-sm sm:text-base rounded-lg hover:bg-blue-700 transition-colors duration-200">
                   Watch Series
                 </button>
               </div>
@@ -171,24 +171,24 @@ export default function Videos() {
         </div>
 
         {/* Video Categories Grid */}
-        <div className="mx-auto mt-20 max-w-7xl">
-          <h2 className="text-3xl font-bold text-center text-slate-900 font-poppins mb-16">
+        <div className="mx-auto mt-16 sm:mt-20 max-w-7xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 font-poppins mb-12 sm:mb-16">
             Video Categories
           </h2>
           
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {videoCategories.map((category) => (
               <div key={category.id} className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200">
-                <div className="aspect-w-16 aspect-h-9 bg-gray-100">
+                <div className="relative aspect-w-16 aspect-h-9 bg-gray-100">
                   <Image
                     src={category.image}
                     alt={category.title}
                     width={400}
                     height={225}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-40 sm:h-48 object-cover"
                   />
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+                    <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
                       category.level === 'Beginner' ? 'bg-green-100 text-green-700' :
                       category.level === 'Intermediate' ? 'bg-yellow-100 text-yellow-700' :
                       'bg-red-100 text-red-700'

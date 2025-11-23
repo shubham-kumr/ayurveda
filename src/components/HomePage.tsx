@@ -1,6 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ServiceModal from './ServiceModal';
 
 interface Service {
   name: string;
@@ -77,51 +80,47 @@ const stats = [
 ];
 
 export default function HomePage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-blue-50 to-green-50 py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="relative bg-linear-to-br from-blue-50 to-green-50 py-12 sm:py-16 md:py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Text Content - Left Side */}
-            <div className="flex flex-col justify-center">
-              <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl font-poppins">
+            <div className="flex flex-col justify-center text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-poppins leading-tight">
                 India's First{' '}
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-green-600">
                   EdTech Platform
                 </span>{' '}
-                Dedicated to Ayurveda
+                <span className="block sm:inline">Dedicated to Ayurveda</span>
               </h1>
-              <p className="mt-6 text-lg leading-8 text-slate-600 max-w-2xl">
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 max-w-2xl mx-auto lg:mx-0">
                 AyurWings is a dedicated digital marketing agency specializing in Ayurveda. 
                 Empower your practice with advance marketing strategies, courses, and consultation services 
                 designed exclusively for Ayurveda practitioners.
               </p>
-              <div className="mt-10 flex items-center gap-x-6">
-                <Link
-                  href="/services"
-                  className="rounded-full bg-blue-600 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors duration-200"
+              <div className="mt-8 sm:mt-10 flex items-center justify-center lg:justify-start gap-x-4 sm:gap-x-6">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="rounded-full bg-blue-600 px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors duration-200"
                 >
                   Explore Services
-                </Link>
-                <Link
-                  href="/videos"
-                  className="text-sm font-semibold leading-6 text-slate-700 hover:text-blue-600 transition-colors duration-200"
-                >
-                  Watch Videos <span aria-hidden="true">→</span>
-                </Link>
+                </button>
               </div>
             </div>
             
             {/* Image - Right Side */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
+            <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
+              <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl">
                 <Image
                   src="/images/hero-bg.jpeg"
                   alt="Ayurveda Education Platform"
                   width={600}
                   height={500}
-                  className="rounded-2xl shadow-2xl object-cover"
+                  className="w-full h-auto rounded-2xl shadow-2xl object-cover"
                   priority
                 />
                 <div className="absolute inset-0 rounded-2xl bg-linear-to-t from-blue-900/20 to-transparent"></div>
@@ -143,22 +142,22 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-white py-12 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-poppins">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 font-poppins">
                 Trusted by Ayurveda Community Worldwide
               </h2>
-              <p className="mt-4 text-lg leading-8 text-slate-600">
+              <p className="mt-3 sm:mt-4 text-base sm:text-lg leading-7 sm:leading-8 text-slate-600">
                 Join our growing community of Ayurveda enthusiasts and professionals
               </p>
             </div>
-            <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+            <dl className="mt-12 sm:mt-16 grid grid-cols-2 gap-0.5 overflow-hidden rounded-2xl text-center md:grid-cols-4">
               {stats.map((stat) => (
-                <div key={stat.name} className="flex flex-col bg-slate-50 p-8">
-                  <dt className="text-sm font-semibold leading-6 text-slate-600">{stat.name}</dt>
-                  <dd className="order-first text-3xl font-bold tracking-tight text-blue-600 font-poppins">
+                <div key={stat.name} className="flex flex-col bg-slate-50 p-4 sm:p-6 lg:p-8">
+                  <dt className="text-xs sm:text-sm font-semibold leading-5 sm:leading-6 text-slate-600">{stat.name}</dt>
+                  <dd className="order-first text-2xl sm:text-3xl font-bold tracking-tight text-blue-600 font-poppins">
                     {stat.value}
                   </dd>
                 </div>
@@ -169,36 +168,34 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-slate-50 py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-slate-50 py-12 sm:py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-poppins">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 font-poppins">
               Our Services
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-slate-600">
               Comprehensive solutions for Ayurvedic education, practice, and research
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8">
+          <div className="mx-auto mt-12 sm:mt-16 md:mt-20 grid max-w-2xl grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8">
             {services.map((service) => (
               <div
                 key={service.name}
-                className={`group relative rounded-2xl border-2 ${service.color} p-8 shadow-sm transition-all duration-300 ${service.hoverColor} hover:shadow-lg`}
+                className={`group relative rounded-2xl border-2 ${service.color} p-4 sm:p-6 lg:p-8 shadow-sm transition-all duration-300 ${service.hoverColor} hover:shadow-lg`}
               >
                 <div>
-                  <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
+                  <div className="relative h-32 sm:h-40 lg:h-48 mb-3 sm:mb-4 rounded-lg overflow-hidden">
                     <img 
                       src={service.image} 
                       alt={service.name}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold leading-8 tracking-tight mb-3 font-poppins">
-                    <Link href={service.anchor ? `${service.href}#${service.anchor}` : service.href} className="focus:outline-none hover:text-blue-600 transition-colors duration-200">
-                      {service.name}
-                    </Link>
+                  <h3 className="text-base sm:text-lg font-semibold leading-6 sm:leading-8 tracking-tight mb-2 sm:mb-3 font-poppins">
+                    {service.name}
                   </h3>
-                  <p className="text-sm leading-6 opacity-90">
+                  <p className="text-xs sm:text-sm leading-5 sm:leading-6 opacity-90">
                     {service.description}
                   </p>
                 </div>
@@ -272,12 +269,12 @@ export default function HomePage() {
               interactive learning experiences designed by experts.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/services"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors duration-200"
               >
                 Get Started Today
-              </Link>
+              </button>
               <Link
                 href="/contact"
                 className="text-sm font-semibold leading-6 text-white hover:text-blue-100 transition-colors duration-200"
@@ -288,6 +285,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      
+      {/* Service Modal */}
+      <ServiceModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 }

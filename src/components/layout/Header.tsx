@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
@@ -41,9 +41,15 @@ const navigation = [
     name: 'Videos',
     href: '/videos',
     children: [
+      { name: 'Ayurvedic Dermatology', href: '/ayurvedic-dermatology' },
+      { name: 'Ayurvedic Urology', href: '/ayurvedic-urology' },
       { name: 'Basti Chikitsa', href: '/videos/basti-chikitsa' },
+      { name: 'Charak Vyakhayan Mala-01', href: '/charak-vyakhayan-mala-01' },
       { name: 'Charak Path Vyakhyaanmala-2', href: '/videos/charak-path-vyakhyaanmala-2' },
+      { name: 'Charak Vyakhayan Mala-3', href: '/charak-vyakhayan-mala-3' },
+      { name: 'Garbh Sanskar', href: '/garbh-sanskar' },
       { name: 'Gynecological Disorders', href: '/videos/gynecological-disorders' },
+      { name: 'Menstrual Health', href: '/menstrual-health' },
       { name: 'Pain Management', href: '/videos/pain-management' },
       { name: 'Raktamokshan', href: '/videos/raktamokshan' },
     ]
@@ -53,15 +59,66 @@ const navigation = [
 ];
 
 export default function Header() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return (
+      <nav className="bg-white shadow-sm border-b border-gray-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20">
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center">
+                <div className="relative w-20 h-12">
+                  <Image
+                    src="/images/logo/logo.png"
+                    alt="AyurWings - India's First Edtech Ayurveda Platform"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <div className="ml-3">
+                  <h1 className="text-sm font-medium text-teal-800 hidden sm:block">
+                    India's First Edtech Ayurveda Platform!!
+                  </h1>
+                </div>
+              </Link>
+            </div>
+            <div className="hidden lg:flex lg:items-center lg:space-x-8">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-slate-700 hover:text-blue-600 font-medium py-2 px-1 transition-colors duration-200"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+            <div className="flex items-center lg:hidden">
+              <button className="inline-flex items-center justify-center p-2 rounded-md text-slate-700 hover:text-blue-600 hover:bg-gray-100">
+                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+
   return (
     <Disclosure as="nav" className="bg-white shadow-sm border-b border-gray-200">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-20">
+            <div className="flex justify-between h-16 sm:h-20">
               <div className="flex items-center">
                 <Link href="/" className="flex items-center">
-                  <div className="relative w-20 h-12">
+                  <div className="relative w-16 h-10 sm:w-20 sm:h-12">
                     <Image
                       src="/images/logo/logo.png"
                       alt="AyurWings - India's First Edtech Ayurveda Platform"
@@ -70,8 +127,8 @@ export default function Header() {
                       priority
                     />
                   </div>
-                  <div className="ml-3">
-                    <h1 className="text-sm font-medium text-teal-800 hidden sm:block">
+                  <div className="ml-2 sm:ml-3">
+                    <h1 className="text-xs sm:text-sm font-medium text-teal-800 hidden xs:block max-w-44 sm:max-w-none leading-tight">
                       India's First Edtech Ayurveda Platform!!
                     </h1>
                   </div>
@@ -88,7 +145,7 @@ export default function Header() {
                           {item.name}
                           <ChevronDownIcon className="ml-1 h-4 w-4" />
                         </button>
-                        <div className="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div className="absolute left-0 mt-2 w-64 sm:w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                           <div className="bg-white rounded-lg shadow-xl border py-4">
                             {item.children.map((child) => (
                               <div key={child.name} className="relative group/sub">
@@ -98,7 +155,7 @@ export default function Header() {
                                       <span>{child.name}</span>
                                       <ChevronRightIcon className="h-4 w-4" />
                                     </div>
-                                    <div className="absolute left-full top-0 ml-1 w-64 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <div className="absolute left-full top-0 ml-1 w-56 sm:w-64 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
                                       <div className="bg-white rounded-lg shadow-xl border py-4">
                                         {child.children.map((grandchild) => (
                                           <Link
@@ -152,7 +209,7 @@ export default function Header() {
 
           {/* Mobile menu */}
           <Disclosure.Panel className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+            <div className="px-3 pt-3 pb-4 space-y-2 sm:px-4 bg-white border-t border-gray-200 max-h-96 overflow-y-auto">
               {navigation.map((item) => (
                 <div key={item.name}>
                   {item.children ? (
